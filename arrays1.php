@@ -1,4 +1,20 @@
 <?php
+function pintarTabla(array $datos){   //['Andalucia'=>['Almeria', '',...]]
+    echo "<hr>";
+    echo "<table border='4'>";
+    foreach($datos as $nomCom=>$prov){
+    echo "<tr>";
+    echo "<td colspan='".count($prov)."'>$nomCom</td>";
+    echo "</tr>";
+    echo "<tr>";
+        foreach($prov as $nomProv){
+            echo "<td>$nomProv</td>";
+        }
+    echo "</tr>";
+    }
+    echo "</table>";
+    echo "<hr>";
+}
 $prov=['Almeria', 'Cordoba'];
 // $prov1=array('Almeria', 'Cordoba');
 // $prov2=[];
@@ -82,6 +98,9 @@ $total=[
     'Extremadura'=>$provExt,
     'Valencia'=>$provVal
 ];
+
+
+
 echo "<hr>";
 print_r($total);
 echo "<br>------------------------LISTA--------------------------";
@@ -96,7 +115,10 @@ foreach($total as $com=>$prov){
 }
 echo "</ol>";
 //--------------------------------
-echo "<br>".$total[0];
+foreach($total as $comunidad=>$provincias){
+    pintarTabla([$comunidad=>$provincias]);  //['Andalucia'=>['Almeria', '',...]]
+}
+
 
 
 
