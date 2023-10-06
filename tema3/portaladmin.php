@@ -1,13 +1,13 @@
 <?php
 session_start();
-if (!isset($_SESSION['perfil'])) {
-    header("Location:uno.php");
-    die();
-}
-if($_SESSION['perfil']!=100){
+if (!isset($_SESSION['perfil']) || $_SESSION['perfil']!=100) {
     header("Location:sitio.php");
     die();
 }
+// if($_SESSION['perfil']!=100){
+//     header("Location:sitio.php");
+//     die();
+// }
 ?>
 <!DOCTYPE html>
     <html lang="es">

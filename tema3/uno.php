@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 function mostrarError(string $nombre): void
 {
     if (isset($_SESSION[$nombre])) {

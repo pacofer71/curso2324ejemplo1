@@ -14,6 +14,8 @@ for($i=1; $i<=100; $i++){
     }
 }
 //Forma 2 con operador ternario
+
+
 echo "<hr>";
 for($i=1; $i<=100; $i++){
     echo ($i%5==0) ? 
